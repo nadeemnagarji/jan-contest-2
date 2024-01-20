@@ -20,7 +20,7 @@ let callApi = (username,password)=>{
 })
 .then((res)=> {
     if(!res.ok){
-        setErr(`HTTP error! Status: ${res.status}`)
+        setErr(`HTTP error! Enter valid Email or Password Status: ${res.status}`)
     }
    return  res.json()
 })
