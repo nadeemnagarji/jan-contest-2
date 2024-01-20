@@ -7,6 +7,7 @@ export default function Signup(params) {
  
     let [user,setUser ] = useState({username:"",password:""})
     let [err,setErr] = useState(null)
+    let [validate,setValidate] = useState(null)
     let [data,setdata]= useState(null)
 
 let callApi = (username,password)=>{
@@ -36,7 +37,7 @@ let callApi = (username,password)=>{
     let handleSubmit = (e)=>{
         e.preventDefault()
             if(!user.username || !user.password){
-                setErr("Enter All fields")
+                setValidate("Enter All fields")
             }else{
                 setErr(null)
                 localStorage.setItem("email",user.username)
@@ -58,12 +59,12 @@ let callApi = (username,password)=>{
             <div>
             <label htmlFor="username"> Your Email</label>
             <input id='username' type="text" onChange={handleUser}   name="username" value={user.username}/>
-            {err&& <p>{err}</p>}
+            {setValidate&& <p>{setValidate}</p>}
             </div>
             <div>
             <label htmlFor="password">Password</label>
             <input id='password' type="password" onChange={handleUser}  name="password"  value={user.password}/>
-            {err&& <p>{err}</p>}
+            {setValidate&& <p>{setValidate}</p>}
              </div>
          
             <div className='end-div'>
