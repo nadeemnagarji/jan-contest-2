@@ -59,12 +59,12 @@ let callApi = (username,password)=>{
             <div>
             <label htmlFor="username"> Your Email</label>
             <input id='username' type="text" onChange={handleUser}   name="username" value={user.username}/>
-            {setValidate&& <p>{setValidate}</p>}
+            {validate&& <p>{validate}</p>}
             </div>
             <div>
             <label htmlFor="password">Password</label>
             <input id='password' type="password" onChange={handleUser}  name="password"  value={user.password}/>
-            {setValidate&& <p>{setValidate}</p>}
+            {validate&& <p>{validate}</p>}
              </div>
          
             <div className='end-div'>
